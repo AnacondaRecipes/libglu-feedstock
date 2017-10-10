@@ -9,13 +9,13 @@ source:
 
 build:
   number: 1
-  skip: True  # [win]
+  skip: True  # [not linux]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ cdt('mesa-libgl-devel') }}
+    - {{ cdt('mesa-libgl-devel') }}       # [linux]
 
 test:
   commands:
