@@ -1,14 +1,13 @@
 package:
     name: libglu
-    version: 9.0.0
+    version: "9.0.0"
 
 source:
-    fn: glu-9.0.0.tar.gz
-    url: ftp://ftp.freedesktop.org/pub/mesa/glu/glu-9.0.0.tar.gz
+    url: https://archive.mesa3d.org//{{ name }}/{{ name }}-{{ version }}.tar.gz
     md5: bbc57d4fe3bd3fb095bdbef6fcb977c4
 
 build:
-  number: 1
+  number: 0
   skip: True  # [not linux]
 
 requirements:
