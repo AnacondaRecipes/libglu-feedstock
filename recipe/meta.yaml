@@ -6,7 +6,7 @@ package:
     version: "9.0.0"
 
 source:
-    url: https://archive.mesa3d.org//{{ name }}/{{ name }}-{{ version }}.tar.gz
+    url: https://archive.mesa3d.org//glu/glu-{{ version }}.tar.gz
     md5: bbc57d4fe3bd3fb095bdbef6fcb977c4
 
 build:
