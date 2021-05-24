@@ -1,3 +1,6 @@
+{% set name = 'libglu' %}
+{% set version = '9.0.0' %}
+
 package:
     name: libglu
     version: "9.0.0"
