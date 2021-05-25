@@ -1,4 +1,3 @@
-{% set name = 'libglu' %}
 {% set version = '9.0.0' %}
 
 package:
@@ -18,6 +17,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ cdt('mesa-libgl-devel') }}       # [linux]
+    - make  
 
 test:
   commands:
