@@ -25,7 +25,7 @@ test:
 about:
   home: http://www.mesa3d.org/glu.html
   license: SGI-2
-  summary: Mesa OpenGL utility library (GLU)
+  summary: Mesa OpenGL utility library (GLU).
 
 extra:
   recipe-maintainers:
