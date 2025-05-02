@@ -1,11 +1,8 @@
 #!/bin/bash
 
-if [[ ${HOST} =~ .*darwin.* ]]; then
-  export CPPFLAGS="${CPPFLAGS} -framework OpenGL"
-  export LDFLAGS="${LDFLAGS} -framework OpenGL"
-fi
-./configure --prefix=${PREFIX} \
-            --build=${BUILD} \
-            --host=${HOST}
-make -j${CPU_COUNT} ${VERBOSE_AT}
-make install
+mkdir -p build
+meson setup build ${MESON_ARGS} --prefix=${PREFIX}
+
+# Build and install
+meson compile -C build
+meson install -C build

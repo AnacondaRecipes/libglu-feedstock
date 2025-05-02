@@ -1,0 +1,24 @@
+From a1b5098aa83e484d51e34fe825daa27d538add43 Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Sun, 27 Oct 2024 20:11:58 -0400
+Subject: [PATCH] Fix opengl -> gl typo. pkg-config expects gl not opengl
+
+---
+ meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index 7949e30..a44575e 100644
+--- a/meson.build
++++ b/meson.build
+@@ -16,7 +16,7 @@ endif
+ 
+ gl_provider = get_option('gl_provider')
+ if gl_provider == 'glvnd'
+-  gl_provider = 'opengl'
++  gl_provider = 'gl'
+ endif
+ dep_gl = dependency(gl_provider)
+ 
+-- 
+2.47.0
