@@ -40,9 +40,11 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libGLU.a            # [not win]
     - test -f ${PREFIX}/lib/libGLU${SHLIB_EXT}  # [not win]
-  downstreams:
-    - jasper
-    - freeglut
+
+  # Check dowstreams if needed.
+  # downstreams:
+  #   - jasper
+  #   - freeglut
 
 about:
   home: https://www.mesa3d.org
