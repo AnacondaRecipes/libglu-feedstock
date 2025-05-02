@@ -13,13 +13,13 @@ source:
 
 build:
   number: 0
-  skip: True  # [win or osx]
+  skip: True  # [not linux]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
-    - pkg-config                    # [unix]
+    - pkg-config                         # [unix]
     - ninja
     - meson
   host:
@@ -38,7 +38,7 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libGLU.a  # [not win]
+    - test -f ${PREFIX}/lib/libGLU.a            # [not win]
     - test -f ${PREFIX}/lib/libGLU${SHLIB_EXT}  # [not win]
   downstreams:
     - jasper
@@ -51,6 +51,7 @@ about:
   license: SSGI-B-1.1 AND SGI-B-2.0 AND MIT
   license_family: Other
   summary: Mesa OpenGL utility library (GLU).
+  description: Mesa OpenGL utility library (GLU).
 
 extra:
   recipe-maintainers:
