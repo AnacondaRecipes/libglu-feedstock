@@ -33,8 +33,8 @@ requirements:
     - xorg-libxxf86vm                    # [linux]
     - libxcb                             # [linux]
     # These dependencies are only for cos7 platforms
-    - xorg-libxau  # [linux & (ppc64le | aarch64)]
-    - xorg-libxdmcp  # [linux & (ppc64le | aarch64)]
+    - xorg-libxau  # [linux and (ppc64le or aarch64)]
+    - xorg-libxdmcp  # [linux and (ppc64le or aarch64)]
 
 test:
   commands:
