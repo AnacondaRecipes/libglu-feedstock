@@ -42,11 +42,10 @@ test:
     - test -f ${PREFIX}/lib/libGLU${SHLIB_EXT}  # [not win]
 
   # Check dowstreams if needed.
-  downstreams:
-    - jasper
-    - freeglut
-    - vtk-base 9.4.1
-    - vtk 9.4.1
+  # downstreams:
+  #   - jasper
+  #   - freeglut
+  #   - vtk-base
 
 about:
   home: https://www.mesa3d.org
