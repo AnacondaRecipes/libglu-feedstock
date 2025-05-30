@@ -24,6 +24,7 @@ requirements:
     - pkg-config                         # [unix]
     - ninja
     - meson
+    - patch
   host:
     - libgl-devel                        # [linux]
     - libegl-devel                       # [linux]
@@ -54,7 +55,8 @@ about:
   home: https://www.mesa3d.org
   dev_url: https://gitlab.freedesktop.org/mesa/glu
   doc_url: https://gitlab.freedesktop.org/mesa/glu
-  license: SSGI-B-1.1 AND SGI-B-2.0 AND MIT
+  license: SGI-B-1.1 AND SGI-B-2.0 AND MIT
+  license_url: https://docs.mesa3d.org/license.html#license-and-copyright
   license_family: Other
   summary: Mesa OpenGL utility library (GLU).
   description: Mesa OpenGL utility library (GLU).
