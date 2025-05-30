@@ -12,8 +12,10 @@ source:
     - 0001-Fix-opengl-gl-typo.-pkg-config-expects-gl-not-opengl.patch
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not linux]
+  run_exports:
+    - {{ pin_subpackage('libglu') }}
 
 requirements:
   build:
@@ -45,6 +47,7 @@ test:
   # downstreams:
   #   - jasper
   #   - freeglut
+  #   - glew
   #   - vtk-base
 
 about:
