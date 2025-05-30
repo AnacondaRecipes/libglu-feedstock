@@ -12,8 +12,10 @@ source:
     - 0001-Fix-opengl-gl-typo.-pkg-config-expects-gl-not-opengl.patch
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not linux]
+  run_exports:
+    - {{ pin_subpackage('libglu') }}
 
 requirements:
   build:
@@ -22,6 +24,7 @@ requirements:
     - pkg-config                         # [unix]
     - ninja
     - meson
+    - patch
   host:
     - libgl-devel                        # [linux]
     - libegl-devel                       # [linux]
@@ -45,13 +48,15 @@ test:
   # downstreams:
   #   - jasper
   #   - freeglut
+  #   - glew
   #   - vtk-base
 
 about:
   home: https://www.mesa3d.org
   dev_url: https://gitlab.freedesktop.org/mesa/glu
   doc_url: https://gitlab.freedesktop.org/mesa/glu
-  license: SSGI-B-1.1 AND SGI-B-2.0 AND MIT
+  license: SGI-B-1.1 AND SGI-B-2.0 AND MIT
+  license_url: https://docs.mesa3d.org/license.html#license-and-copyright
   license_family: Other
   summary: Mesa OpenGL utility library (GLU).
   description: Mesa OpenGL utility library (GLU).
