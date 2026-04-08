@@ -3,3 +3,4 @@ upstream_sources:
   - gitlab:
       identifier: mesa/glu
       host: gitlab.freedesktop.org
+      use_max_tag: true
