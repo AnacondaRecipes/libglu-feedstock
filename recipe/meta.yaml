@@ -1,7 +1,8 @@
-{% set version = '9.0.3' %}
+{% set name = "libglu" %}
+{% set version = "9.0.3" %}
 
 package:
-  name: libglu
+  name: {{ name }}
   version: {{ version }}
 
 source:
@@ -12,13 +13,14 @@ source:
     - 0001-Fix-opengl-gl-typo.-pkg-config-expects-gl-not-opengl.patch
 
 build:
-  number: 1
-  skip: True  # [not linux]
+  number: 2
+  skip: true  # [not linux]
   run_exports:
-    - {{ pin_subpackage('libglu') }}
+    - {{ pin_subpackage(name) }}
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
     - pkg-config                         # [unix]
@@ -45,11 +47,11 @@ test:
     - test -f ${PREFIX}/lib/libGLU${SHLIB_EXT}  # [not win]
 
   # Check dowstreams if needed.
-  # downstreams:
-  #   - jasper
-  #   - freeglut
-  #   - glew
-  #   - vtk-base
+  downstreams:
+    - jasper
+    - freeglut
+    - glew
+    - vtk-base
 
 about:
   home: https://www.mesa3d.org
