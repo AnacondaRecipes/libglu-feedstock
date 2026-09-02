@@ -46,11 +46,11 @@ test:
     - test -f ${PREFIX}/lib/libGLU${SHLIB_EXT}  # [not win]
 
   # Check dowstreams if needed.
-  downstreams:
-    - jasper
-    - freeglut
-    - glew
-    - vtk-base
+  # downstreams:
+  #   - jasper
+  #   - freeglut
+  #   - glew
+  #   - vtk-base
 
 about:
   home: https://mesa3d.org/
