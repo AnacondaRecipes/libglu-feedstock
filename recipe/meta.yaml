@@ -26,20 +26,19 @@ requirements:
     - pkg-config                         # [unix]
     - ninja
     - meson
-    - patch
   host:
-    - libgl-devel                        # [linux]
-    - libegl-devel                       # [linux]
-    - libdrm                             # [linux]
-    - xorg-libx11                        # [linux]
-    - xorg-xorgproto                     # [linux]
-    - xorg-libxext                       # [linux]
-    - xorg-libxdamage                    # [linux]
-    - xorg-libxxf86vm                    # [linux]
-    - libxcb                             # [linux]
+    - libgl-devel {{ libgl }}                        # [linux]
+    - libegl-devel {{ libegl }}                      # [linux]
+    - libdrm {{ libdrm }}                 # [linux]
+    - xorg-libx11 {{ xorg_libx11 }}      # [linux]
+    - xorg-xorgproto {{ xorg_xorgproto }} # [linux]
+    - xorg-libxext {{ xorg_libxext }}    # [linux]
+    - xorg-libxdamage {{ xorg_libxdamage }} # [linux]
+    - xorg-libxxf86vm {{ xorg_libxxf86vm }} # [linux]
+    - libxcb {{ libxcb }}                            # [linux]
     # These dependencies are only for cos7 platforms
-    - xorg-libxau  # [linux and (ppc64le or aarch64)]
-    - xorg-libxdmcp  # [linux and (ppc64le or aarch64)]
+    - xorg-libxau {{ xorg_libxau }}  # [linux and (ppc64le or aarch64)]
+    - xorg-libxdmcp {{ xorg_libxdmcp }}  # [linux and (ppc64le or aarch64)]
 
 test:
   commands:
@@ -54,7 +53,7 @@ test:
     - vtk-base
 
 about:
-  home: https://www.mesa3d.org
+  home: https://mesa3d.org/
   dev_url: https://gitlab.freedesktop.org/mesa/glu
   doc_url: https://gitlab.freedesktop.org/mesa/glu
   license: SGI-B-1.1 AND SGI-B-2.0 AND MIT
@@ -67,3 +66,7 @@ extra:
   recipe-maintainers:
     - bgruening
     - hmaarrfk
+  skip-lints:
+    - python_build_tools_in_host
+    - deprecate_license_url
+    - missing_license_file
